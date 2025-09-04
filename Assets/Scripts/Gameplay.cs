@@ -5,10 +5,10 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Character
 {
-    public string name; // Attributes
-    public int hp;
-
-    public Character(string n, int h) // Constructor
+    //attributes
+    public string name;  //name 
+    public int hp;       //Hit points
+    public Character(string n, int h)  //constructor
     {
         name = n;
         hp = h;
@@ -21,6 +21,7 @@ public class Gameplay : MonoBehaviour
     Image hpBar;
     Character player;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = new Character("PicoChan", 70);
@@ -29,10 +30,9 @@ public class Gameplay : MonoBehaviour
         playerName.text = player.name;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        {
-            hpBar.fillAmount = (float)player.hp / 100f;
-        }
+        hpBar.fillAmount = (float)player.hp / 100;
     }
 }
